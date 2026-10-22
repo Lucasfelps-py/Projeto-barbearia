@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soberanos Barbearia | Agendamento Online</title>
+    
+    <!-- Fontes Chiques (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+    <!-- CABEÇALHO COM LOGO ESTILO SALONSOFT -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="brand-logo">
+                <div class="logo-badge">S/S</div>
+                <span class="logo-text">SALON<span>SOFT</span></span>
+            </div>
+
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Alternar Tema">🌙</button>
+                <button id="btn-my-bookings" class="btn-secondary">Meus agendamentos</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO / BANNER -->
+    <section class="hero container">
+        <div class="barbershop-badge">
+            <div class="avatar-circle">
+                <span>SB</span>
+            </div>
+            <div>
+                <p class="welcome-tag">Seja bem vindo(a) ao</p>
+                <h1 class="shop-title">Soberanos Barbearia</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL CENTRALIZADO -->
+    <main class="container main-single-layout">
+        
+        <section class="booking-section">
+            
+            <!-- CONTROLES DE SERVIÇO -->
+            <div class="section-header">
+                <h2 class="section-title">Serviços</h2>
+                <input type="text" id="search-input" placeholder="Buscar serviço..." class="search-field">
+            </div>
+
+            <!-- FILTROS POR CATEGORIA -->
+            <div class="categories-bar">
+                <button class="cat-btn active" data-cat="all">Todos</button>
+                <button class="cat-btn" data-cat="combos">Combos</button>
+                <button class="cat-btn" data-cat="cortes">Cortes</button>
+                <button class="cat-btn" data-cat="barba">Barba</button>
+                <button class="cat-btn" data-cat="tratamentos">Tratamentos</button>
+            </div>
+
+            <!-- LISTA DE SERVIÇOS -->
+            <div class="services-list" id="services-container">
+                <!-- Inserido dinamicamente via JS -->
+            </div>
+
+            <!-- SELEÇÃO DE PROFISSIONAL COM COM FOTOS REAIS -->
+            <div class="section-header" style="margin-top: 40px;">
+                <h2 class="section-title">Selecione o profissional</h2>
+            </div>
+            
+            <div class="barbers-grid" id="barbers-container">
+                <div class="barber-card active" data-barber="Ygor Leal">
+                    <div class="barber-avatar">
+                        <img src="img/ygor-leal.jpg" alt="Ygor Leal">
+                    </div>
+                    <strong>Ygor Leal</strong>
+                </div>
+
+                <div class="barber-card" data-barber="Anderson S">
+                    <div class="barber-avatar">
+                        <img src="img/anderson-s.jpg" alt="Anderson S">
+                    </div>
+                    <strong>Anderson S</strong>
+                </div>
+
+                <div class="barber-card" data-barber="Barros">
+                    <div class="barber-avatar">
+                        <img src="img/barros.jpg" alt="Barros">
+                    </div>
+                    <strong>Barros</strong>
+                </div>
+            </div>
+
+            <!-- DATA E HORÁRIO -->
+            <div class="section-header" style="margin-top: 40px;">
+                <h2 class="section-title">Data e Horário</h2>
+            </div>
+
+            <div class="calendar-bar" id="calendar-days">
+                <!-- Dias gerados via JS -->
+            </div>
+
+            <div class="time-grid" id="time-slots">
+                <!-- Horários gerados via JS -->
+            </div>
+
+            <!-- BOTÃO DE CONTINUAR AO FINAL DA PÁGINA -->
+            <div style="margin-top: 40px; text-align: center;">
+                <button id="btn-open-confirm" class="btn-primary-large" disabled>
+                    Continuar Agendamento
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- MODAL DE CONFIRMAÇÃO DO WHATSAPP -->
+    <div class="modal-overlay" id="modal-confirm">
+        <div class="modal-box">
+            <button class="modal-close" id="btn-close-modal">&times;</button>
+            <h3>Confirme o seu número</h3>
+            <p>Por favor, escreva o número do celular usado para agendar o serviço.</p>
+            
+            <div class="form-group">
+                <label for="user-phone">Celular (WhatsApp)</label>
+                <input type="tel" id="user-phone" placeholder="Digite seu celular">
+            </div>
+
+            <div class="form-group">
+                <label for="user-name">Seu Nome</label>
+                <input type="text" id="user-name" placeholder="Digite seu nome completo">
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn-secondary" id="btn-cancel">Voltar</button>
+                <button class="btn-success" id="btn-finish">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
